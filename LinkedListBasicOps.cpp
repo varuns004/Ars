@@ -164,3 +164,12 @@ int main(){
     searchlist(head,99);
     return 0;
 }
+
+
+//output
+//5->7->22->9->10->11->NULL
+//9->10->11->NULL
+//88->99->9->10->11->NULL
+//11->10->9->99->88->NULL
+//5
+//found
