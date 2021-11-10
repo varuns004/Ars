@@ -94,14 +94,16 @@ int main(){
     display(head);
     palindrome(head);
     display(head);
-       
-    
-    
-    
     return 0;
     
 }
 
+
+
+//output
+//1 2 3 4 4 3 2 1 
+//palindrome
+//1 2 3 4 1 2 3 4 
 
 
 
