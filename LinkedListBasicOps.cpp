@@ -10,35 +10,6 @@ class node{
     }
 };
 
-void deleteatpos(node* &head,int pos){
-    node* temp=head;
-    if(pos==1){
-        head=temp->next;
-        delete temp;
-        return;
-    }
-    int count = 1;
-
-    while(count!=pos-1){
-        temp=temp->next;
-         count++;
-    }
-
-    node* todelete=temp->next;
-    temp->next=temp->next->next;
-    delete todelete;
-
-}
-
-void countt(node* &head){
-    int count =1;
-    node* temp=head;
-    while(temp->next!=NULL){
-        temp=temp->next;
-        count++;
-    }
-    cout<<count;
-}
 
 void insert(node* &head,int value){
     node* n = new node(value);
@@ -82,7 +53,30 @@ node* insertatpos(node* &head,int pos,int value){
     temp->next=n;
 }
 
-void deletelist(node* &head,int key){
+
+void deleteatpos(node* &head,int pos){
+    node* temp=head;
+    if(pos==1){
+        head=temp->next;
+        delete temp;
+        return;
+    }
+    int count = 1;
+
+    while(count!=pos-1){
+        temp=temp->next;
+         count++;
+    }
+
+    node* todelete=temp->next;
+    temp->next=temp->next->next;
+    delete todelete;
+
+}
+
+
+
+void deletekeyinlist(node* &head,int key){
     
     node* temp=head;
 
@@ -117,6 +111,18 @@ node* reverselist(node* &head){
     head=prev;
     return head;
 }
+
+
+void countt(node* &head){
+    int count =1;
+    node* temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+        count++;
+    }
+    cout<<count;
+}
+
 
 int countrec(node* &head){
     if(head==NULL){
@@ -153,7 +159,7 @@ int main(){
     display(head);
     deleteatpos(head,3);
     deleteatpos(head,1);
-    deletelist(head,7);
+    deletekeyinlist(head,7);
     display(head);
     insertatpos(head,1,88);
     insertatpos(head,2,99);
